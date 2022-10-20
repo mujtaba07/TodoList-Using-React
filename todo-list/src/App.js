@@ -38,19 +38,19 @@ function App() {
       <h1>Todo-List App</h1>
 
       {/* 2.input  */}
-      <input type="text" 
+      <input className="searchbox" type="text" 
       placeholder="add an item"
        value={newItem} 
        onChange={e=>setNewItem(e.target.value)}
        />
 
-      <button onClick={()=>addItem()}>Add</button>
+      <button className="button" onClick={()=>addItem()}>Add</button>
 
       {/* 3.list of items */}
-    <ul>
+    <ul >
       {items.map(item=>{
         return(
-          <li key={item.id}>{item.value} <button onClick={()=>deleteItem(item.id)}>X</button></li>
+          <li className="items" key={item.id}>{item.value} <button className="cancel-btn" onClick={()=>deleteItem(item.id)}>X</button></li>
         )
       })}
     </ul>
